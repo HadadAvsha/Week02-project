@@ -2,6 +2,21 @@
 
 #get the content from terminal
 PASSWORD=$1
+#while reading '-f' in PP $1 ready to accept file path and assian to PP $2
+if [ $1 == -f ]  
+then
+file=$2
+#checks if file exists
+    if [ -f $file ] 
+    then
+    #assign files content to var
+    PASSWORD=`cat $file`
+    else
+    echo 'file does not exists or invalid path'
+    fi
+else
+PASSWORD=$1
+fi
 
 #count the charecter length of the variable password
 passLen=${#PASSWORD}
