@@ -19,11 +19,11 @@ checkLen(){
 if [[ $passLen -ge 10  ]]
 then
 #displaying green text and then reverting back to white 
-echo -e "$GREEN SUCCESS $WHITE"
+echo -e "$GREEN Password contain 10 charecters or mroe $WHITE"
 #add 1 to count if success
 counter=$((counter+1))
 else
-echo -e "$RED [-] Password lenght must be 10 charecters or greater $WHITE"
+echo -e "$RED [-] Password lenght must be 10 charecters or more $WHITE"
 fi
 }
 
@@ -31,7 +31,7 @@ fi
 checkAN(){
 if [[ $PASSWORD =~ [a-zA-Z] && $PASSWORD =~ [0-9] ]]
 then
-echo -e "$GREEN SUCCESS $WHITE"
+echo -e "$GREEN Password is alphanumeric $WHITE"
 counter=$((counter+1))
 else
 echo -e "$RED [-] Password must be alphanumeric $WHITE"
@@ -42,7 +42,7 @@ fi
 checkUpperLower(){
 if [[ $PASSWORD =~ [A-Z] && $PASSWORD =~ [a-z] ]]
 then
-echo -e "$GREEN SUCCESS $WHITE"
+echo -e "$GREEN Password contain upper and lower case letters $WHITE"
 counter=$((counter+1))
 else
 echo -e "$RED [-] Password must contain upper and lower case letters $WHITE"
