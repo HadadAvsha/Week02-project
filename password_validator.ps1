@@ -2,11 +2,15 @@ $password = $args[0]
 #$passLen = $password.Length
 $incre = 0
 
-Write-Host $password.length
+#Write-Host $password.length
+
+
+$password=$password.ToString()
+#Write-Host $password.length
 
 
 function checkLen(){
-if($password.length -gt 10){
+if($password.length -gt 9){
     $script:incre++
 Write-Host 'Password contain 10 charecters or mroe'-ForegroundColor Green
 }
